@@ -25,7 +25,7 @@ from telenal.teleplotter import plot_bars_from_dict
 
 
 async def main():
-    client = Client("my_account", "your_api_hash", "your_api_hash")
+    client = Client("my_account", "your_api_id", "your_api_hash")
     tops = await measure_top_reactions(
         client,
         chat_name="Family chat :)",
