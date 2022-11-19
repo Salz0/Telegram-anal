@@ -1,7 +1,7 @@
 import os
 from collections import Counter
 
-from telenal.analisis import who_breaks_silence_json, wordcloud_json
+from telenal.analysis import who_breaks_silence_json, wordcloud_json
 
 
 def test_who_breaks_silence_json():
