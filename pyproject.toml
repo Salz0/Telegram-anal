@@ -1,13 +1,21 @@
 [tool.poetry]
 name = "telegram-anal"
-version = "0.1.0"
+version = "0.1.1"
 description = "A fun tool to play with Telegram chats"
 authors = ["Vladyslav Bilyk <vladozeransky2k@gmail.com>"]
+maintainers = []
+
 
 license = "GPL-3.0-or-later"
 readme = "README.md"
 
+repository = "https://github.com/Salz0/Telegram-anal"
+
 keywords = ["telegram", "analysis", "nlp"]
+
+packages = [
+    { include = "telenal" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -18,9 +26,14 @@ TgCrypto = "^1.2.4"
 matplotlib = "^3.6.1"
 numpy = "^1.23.4"
 scipy = "^1.9.3"
+pandas = "^1.5.1"
+nltk = "^3.7"
+wordcloud = "^1.8.2"
+stop-words = "^2018.7.23"
 
 [tool.poetry.dev-dependencies]
 black = "^22.10.0"
+pytest = "^7.2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
