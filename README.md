@@ -5,6 +5,16 @@ Based on pyrogram, its mission is to help you have fun with Telegram and it's fu
 Whether it is about playing with your group chat dialogs or analysing the group dynamic of your business, personal chats or even your saved messages.
 
 Be creative and build on top of ready solutions! 🧠
+
+Current functionality (version 0.1.1):
+
+✨🌠 `wordcloud_json()`Create fun wordclouds out of chats 
+
+💬🗣 `who_breaks_silence_json()` Analyze who tends to break the silence in the chats and write first
+
+🤍❤ `measure_top_reactions()` measure who's messages are most reacted to and choose specific reactions!
+
+
 ___
 ### Installation:
 ```
