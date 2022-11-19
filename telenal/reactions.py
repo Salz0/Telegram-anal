@@ -24,10 +24,10 @@ def weigh_counter_values(counter1: Counter, counter2: Counter) -> dict:
 
 def register_text_message_reaction(
     message: Message, reaction_counter: Counter, search_emojis: list
-) -> Counter | bool:
+) -> Counter:
     _ = message.date.date()
     if datetime.datetime(_.year, _.month, _.day) < datetime.datetime(2021, 12, 30):
-        return False
+        return reaction_counter
     if not all(
         [
             message.reactions,
@@ -38,7 +38,7 @@ def register_text_message_reaction(
     ):
         return reaction_counter
     reactions_obj, date = message.reactions, message.date.date()
-    target_reactions: list[Reaction, ...] = [
+    target_reactions: list[Reaction] = [
         x for x in reactions_obj.reactions if x.emoji in search_emojis
     ]
     # logger.info(f"{message.text or message.reply=}")
@@ -69,8 +69,10 @@ async def measure_top_reactions(
     reaction_counter, message_counter = Counter(), Counter()
     async with client:
         chat_id = await client.chat_id_by_name(chat_name)
-        async for message in client.chat_history_agen(chat_id=chat_id):
-            reaction_counter = register_text_message_reaction(
+        async for message in client.chat_history_agen(
+            chat_id=chat_id, datetime_until=datetime.datetime(2021, 12, 30)
+        ):
+            reaction_counter: Counter = register_text_message_reaction(
                 message, reaction_counter, search_emojis
             )
             print(f"Reaction Counter: {reaction_counter}", end="\r")
