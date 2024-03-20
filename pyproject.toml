@@ -32,7 +32,7 @@ wordcloud = "^1.8.2"
 stop-words = "^2018.7.23"
 
 [tool.poetry.dev-dependencies]
-black = "^22.10.0"
+black = "^24.3.0"
 pytest = "^7.2.0"
 
 [build-system]
